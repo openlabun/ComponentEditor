@@ -26,7 +26,7 @@ jobs:
           cd /home/proyecto/CompomentEditor/
           git pull origin main
           git status
-          docker stop componenteditor-app
-          docker rm componenteditor-app
+          docker stop componenteditor
+          docker rm componenteditor
           docker build -t componenteditor-image .
           docker run -d -it -p 5019:3000 --restart unless-stopped --name componenteditor componenteditor-image
